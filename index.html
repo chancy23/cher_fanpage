@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cher Fan Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- swiper cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- nav bar header -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <!-- <a href="#" class="brand-logo center">Cher</a> -->
+                <a href="#" data-target="sideNav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="#bio">Bio</a></li>
+                    <li><a href="#trivia">Trivia</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- code for the side nav to work -->
+    <ul class="sidenav" id="sideNav">
+        <li><a href="#bio">Bio</a></li>
+        <li><a href="#trivia">Trivia</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+    </ul>
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="./assets/images/cher_inLights_bgi.png"></div>
+    </div>
+    <!-- Bio blurb section -->
+    <div class="section white" id="bio">
+        <div class="row container">
+            <h2 class="header">Cher Bio</h2>
+            <p class="grey-text text-darken-3 lighten-3">Cher was born on May 20, 1946 as Cherilyn Sarkisian, in El Centro, California. 
+                Her father, John Sarkisian, a truck driver fond of gambling and drinking, was rarely around. Cher's mother, Georgia Holt, 
+                was an occasional model and actress. Cher's parents divorced when she was 10 months old. Holt later remarried and divorced 
+                a few times. Money was often hard to come by, and Holt and her daughters moved throughout the country.</p>
+    
+            <p>Cher was fascinated by stars, but had a hard time finding dark hard actresses to emulate. Her role model was Audrey Hepburn, 
+                and she began to take on the unconventional outfits and behavior of Hepburn's charater in <em>Breakfast at Tiffany's</em>. 
+                She had wanted to be famous since childhood but felt unattractive and untalented, later commenting, 
+                "I couldn't think of anything that I could do... I didn't think I'd be a singer or dancer. I just thought, well, 
+                I'll be famous. That was my goal."</p>
+        
+            <p>At 16, Cher dropped out of school, left her mother's house, and moved to LA with a friend. She began to take acting classes 
+                and worked to support herself by dancing in small clubs on the Sunset Strip. in 1962 she met Sonny Bono while he was working 
+                with Phil Spector. Bono offered Cher the position of his housekeeper and then introduced her to Spector. Spector used her 
+                has a background singer on several songs, and later produced her first single "Ringo, I Love You" under the name Bonnie Jo Mason. </p>
+    
+            <p>Cher and Bono became close friends and later were lovers and eventually married. Cher had terrible stage fright, and so 
+                Bono sang with her to help alleviate this, and thus began Sonny and Cher (first performed under the name Caesar and Cleo). In 1965 they began to call their act Sonny and Cher, and released "I Got You Babe", which would reach #1 on the <em>Billboard</em> Hot 100 chart.</p>
+        
+            <p>Cher signed with Liberty Records in 1964, with Bono as her producer, thus beginning her solo career, along side her duo 
+                with Bono. She released <em>The Sonny Side of Cher</em> and <em>Cher</em> in 1966</p>
+    
+            <p>Cher began her television career in 1971 with <em>The Sonny & Cher Comedy Hour</em>, that originally aired 6 episodes as 
+                a summer filler for the <em>Merv Griffin Show</em>. Due to its great ratings it was brought back as a full show in 
+                December 1971. This time also brought back a resurgence in their musical careers, with several albums being released.</p>
+    
+            <p>Over the years Cher's musical career has seen many highs and lows, and she has had a few musical comebacks, often adjusting 
+                her style to match the current musical landscape, from disco to rock in the 1980s and then from rock to dance/electronic 
+                in the the 90s. Cher's acting career has also blossomed since the 1970s with leading roles in <em>Moonstruck</em>, 
+                <em>Silkwood</em>, <em>Mask</em>, and <em>Mermaids</em> just to name a few.</p>
+    
+            <p>Today Cher is an outspoken activist for LBGT and women's rights (often finding her audience on Twitter), a philanthropist, 
+                and is still acting, releasing music, and performing live.</p>
+    
+            <p>To read more about Cher visit her <a href="https://en.wikipedia.org/wiki/Cher"target="_blank">Wikipedia</a> page, 
+                or to find show informaton and tickets visit <a href="https://cher.com"target="_blank">Cher.com</a></p>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="./assets/images/cher_inLights_bgi.png"></div>
+    </div>
+
+    <!-- Trivia section --> 
+    <div class="section white" id="trivia">
+        <div class="row container">
+            <h2 class="header" id="triviaHeader">Trivia</h2>
+            <p class="grey-text text-darken-3 lighten-3" id="triviaInstructions">Test your Cher knowledge in this timed trivia challenge!</p>
+            <div id=timerArea>You have <span id="timer">15</span> seconds left</div>
+            <div id="questionDisplay">
+                <button id="start">Start Trivia</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="./assets/images/cher_inLights_bgi.png"></div>
+    </div>
+
+    <!-- images gallery or swiper -->
+    <div class="section white" id="gallery">
+        <div class="row container">
+            <h2 class="header">Gallery</h2>
+            
+        <!-- Slider main container -->
+            <div class="swiper-container gallery-top">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide" style="background-image: url(./assets/images/cher1.jpg)"></div>
+                    <div class="swiper-slide"style="background-image: url(./assets/images/cher2.jpg)"></div>
+                    <div class="swiper-slide"style="background-image: url(./assets/images/cherMammaMia.png)"></div>
+                    <div class="swiper-slide"style="background-image: url(./assets/images/cher3.jpg)"></div>
+                    <div class="swiper-slide"style="background-image: url(./assets/images/cheroutfit.jpg)"></div>
+                    <div class="swiper-slide"style="background-image: url(./assets/images/cher1980s.jpg)"></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+
+        
+        
+
+        <!-- concert info from Bands in Town API -->
+
+
+        <!-- search the OMBD for her movies and display info with a poster -->
+        
+   
+    <!-- jquery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- swiper cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+    <!-- local js file -->
+    <script src="./assets/javascript/logic.js"></script>
+</body>
+</html>
