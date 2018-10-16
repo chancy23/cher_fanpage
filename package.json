@@ -1,0 +1,23 @@
+{
+  "name": "cher_fanpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chancy23/cher_fanpage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chancy23/cher_fanpage/issues"
+  },
+  "homepage": "https://github.com/chancy23/cher_fanpage#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

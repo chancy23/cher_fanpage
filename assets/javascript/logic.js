@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    
+
     $(".parallax").parallax();
 
     //for navbar on small screens
@@ -236,6 +238,11 @@ $(document).ready(function(){
         console.log("replay was pushed");
         game.reset();
     });
+
+    //to pull in the concerts js file (bands in town info)
+    var concerts = require("./concerts");
+
+    var movies = require("./movies");
 
 
 
