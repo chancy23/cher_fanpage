@@ -41,31 +41,31 @@ $(document).ready(function(){
             question: "What is Cher's real name?",
             allAnswers: ["Cherilyn Sarkisian", "Cher Sanfordson", "Cherilyn Swenson", "Cher Saskatoon"],
             correctAnswer: "Cherilyn Sarkisian",
-            image: "./assets/images/gifs/cherilynsarkesianGIF.gif"
+            image: "/images/gifs/cherilynsarkesianGIF.gif"
         },
         {
             question: "What 1998 hit pioneered use of Auto-Tune?",
             allAnswers: ["Strong Enough", "If I Could Turn Back Time", "Believe", "The Music Sounds Better With You"],
             correctAnswer: "Believe",
-            image: "./assets/images/gifs/believeGIF.gif"
+            image: "/images/gifs/believeGIF.gif"
         },
         {
             question: "What award has Cher NOT won?",
             allAnswers: ["A Grammy", "An Oscar", "An Emmy", "A Tony"],
             correctAnswer: "A Tony",
-            image: "./assets/images/gifs/cherNoTonyGIF.gif"
+            image: "/images/gifs/cherNoTonyGIF.gif"
         },
         {
             question: "What movie was Cher's film debut in?",
             allAnswers: ["Mask", "Moonstruck", "Silkwood", "Tea with Mussolini"],
             correctAnswer: "Silkwood",
-            image: "./assets/images/gifs/silkwoodGIF.gif"
+            image: "/images/gifs/silkwoodGIF.gif"
         },
         {
             question: "What band is Cher covering on her upcoming album 'Dancing Queen'?",
             allAnswers: ["Journey", "ABBA", "REO Speedwagon", "Fleetwood Mac"],
             correctAnswer: "ABBA",
-            image: "./assets/images/gifs/abbaGIF.gif"
+            image: "/images/gifs/abbaGIF.gif"
         }
     ];
 
@@ -240,9 +240,9 @@ $(document).ready(function(){
     });
 
     //to pull in the concerts js file (bands in town info)
-    var concerts = require("./concerts");
+    //var concerts = require("./concerts");
 
-    var movies = require("./movies");
+   // var movies = require("./movies");
 
 
 
