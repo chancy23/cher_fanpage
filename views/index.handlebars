@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cher Fan Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- swiper cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <!-- nav bar header -->
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <!-- <a href="#" class="brand-logo center">Cher</a> -->
-                <a href="#" data-target="sideNav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="#bio">Bio</a></li>
-                    <li><a href="#trivia">Trivia</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-
-    <!-- code for the side nav to work -->
-    <ul class="sidenav" id="sideNav">
-        <li><a href="#bio">Bio</a></li>
-        <li><a href="#trivia">Trivia</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-    </ul>
-
-    <div class="parallax-container">
+ <div class="parallax-container">
         <div class="parallax"><img src="/images/cher_inLights_bgi.png"></div>
     </div>
     <!-- Bio blurb section -->
@@ -127,36 +91,68 @@
             </div>
         </div>
     </div>
-
-    <!-- concert info from Bands in Town API -->
+   
     <div class="parallax-container">
         <div class="parallax"><img src="/images/cher_inLights_bgi.png"></div>
     </div>
 
+    <!-- concert info from Bands in Town API -->
     <div class="section white" id="concerts">
         <div class="row container">
             <h2 class="header">Upcoming Concerts</h2>
+            <div class="row">
+                {{!-- limit to next 8, and then have option to expand to see all --}}
+                {{#each concertDataObj}}
+                <div class="col s12 m6">
+                    <h5 class="concertHeader">{{this.venue}}</h5>
+                    <p class="concertBody">{{this.city}}, {{this.state}}<br>
+                    {{this.date}} @ {{this.time}}</p>
+                </div>
+                {{/each}}  
+            </div>
         </div>
     </div>
     
     <div class="parallax-container">
             <div class="parallax"><img src="/images/cher_inLights_bgi.png"></div>
-        </div>
+    </div>
 
     <!-- search the OMBD for her movies and display info with a poster -->
     <div class="section white" id="movies">
         <div class="row container">
             <h2 class="header">Movies</h2>
+            <div class="input-field col s6">
+                <select id="movieSelect">
+                    <option value="" disabled selected>Choose a Movie to See its Details</option>
+                    <option value="burlesque">Burlesque</option>
+                    <option value="chastity">Chastity</option>
+                    <option value="come back to the five and dime">Come Back to the Five and Dime</option>
+                    <option value="faithful">Faithful</option>
+                    <option value="good times">Good Times</option>
+                    <option value="mamma mia 2">Mamma Mia 2</option>
+                    <option value="mask">Mask</option>
+                    <option value="mermaids">Mermaids</option>
+                    <option value="moonstruck">Moonstruck</option>
+                    <option value="the player">The Player</option>
+                    <option value="ready to wear">Ready to Wear</option>
+                    <option value="silkwood">Silkwood</option>
+                    <option value="stuck on you">Stuck on You</option>
+                    <option value="suspect">Suspect</option>
+                    <option value="tea with mussolini">Tea with Mussolini</option>
+                    <option value="wild on the beach">Wild on the Beach</option>
+                    <option value="witches of eastwick">The Witches of Eastwick</option>
+                    <option value="zookeeper">Zookeeper (voice)</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col s12 m6" id="moviePosterDisplay">
+                    {{!-- display the poster from tehe API --}}
+                </div>
+
+                <div class="col s12 m6" id="movieDetails">
+                    {{!-- display the title, plot, year of release from the API --}}
+                </div>
+            </div>
+           
         </div>
     </div>
-   
-    <!-- jquery CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- swiper cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
-    <!-- local js file -->
-    <script src="/javascript/logic.js"></script>
-</body>
-</html>

@@ -18,8 +18,12 @@
   },
   "homepage": "https://github.com/chancy23/cher_fanpage#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "nodemon": "^1.18.6",
+    "express-handlebars": "^3.0.0",
+    "moment": "^2.22.2",
+    "nodemon": "^1.18.7",
     "path": "^0.12.7",
     "request": "^2.88.0"
   }

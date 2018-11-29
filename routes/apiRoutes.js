@@ -1,0 +1,97 @@
+
+// to get the keys file
+var keys = require("../keys.js");
+//require to get the requests from the APIs
+var axios = require("axios");
+//require for momentjs
+var moment = require("moment");
+
+module.exports = function (app) {
+    //get request for Bands API info
+    app.get("/", function (req, res) {
+        var bandsKey = keys.bands.id;
+        //request URL for concerts
+        var concertsRequestURL = "https://rest.bandsintown.com/artists/cher/events?";
+
+        //call to the bands in town api
+        axios.get(concertsRequestURL, {
+            params: {
+                app_id: bandsKey,
+            }
+        })
+        .then(function (response) {
+            // console.log(response.data);
+            var data = response.data;
+
+            //the .map loops over the data and gives you each data obj one at a time then we return each concertDataObj. 
+            var formattedConcertData = data.map(function (data) {
+                var venueName = data.venue.name;
+                var venueCity = data.venue.city;
+                var venueState = data.venue.region;
+                var dateFormatted = moment(data.datetime).format("MM/DD/YYYY");
+                var timeFormatted = moment(data.datetime).format("h:mm A");
+
+                //put the above values into an object, then return the object so the .map can push it to the array for the var formattedConcertData
+                var concertDataObj = {
+                    venue: venueName,
+                    city: venueCity,
+                    state: venueState,
+                    date: dateFormatted,
+                    time: timeFormatted
+                };
+                return concertDataObj;
+            });
+            //we can then take that formatted data that is in the array and use that to render into handlebars (need to send the array as a value of the obj)
+            res.render("index", {
+                concertDataObj: formattedConcertData
+            }); 
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    });
+
+    //get request for OMDB
+    app.get("/", function(req, res) {
+        //use the omdb key to pull in the movies cher has been in, and display on her page along with a movie poster
+        var moviesKey = keys.omdb.id;
+
+        // var movie = ; //input from the front end of movie to search for
+
+        var moviesRequestURL = "http://www.omdbapi.com/?";
+
+        //call to the bands in town api
+        axios.get(moviesRequestURL, {
+            params: {
+                apikey: moviesKey,
+                t: movie
+            }
+        })
+        .then(function (response) {
+            // console.log(response.data);
+            var data = response.data;
+
+            //the .map loops over the data and gives you each data obj one at a time then we return each concertDataObj. 
+            var formattedMovieData = data.map(function (data) {
+               
+
+                //put the above values into an object, then return the object so the .map can push it to the array for the var formattedConcertData
+                var movieDataObj = {
+                    
+                };
+                return movieDataObj;
+            });
+
+            //results:
+            //show the movie posters in the dom
+            //when user clicks the poster its replaced by a summary of the movie, yr released
+            //we can then take that formatted data that is in the array and use that to render into handlebars (need to send the array as a value of the obj)
+            res.render("index", {
+                movieDataObj: formattedMovieData
+            }); 
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    });
+};

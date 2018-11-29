@@ -6,6 +6,10 @@ $(document).ready(function(){
     //for navbar on small screens
     $(".sidenav").sidenav();
 
+    //form select
+    $("select").formSelect();
+      
+
     // swiper js initialization
     var galleryTop = new Swiper(".gallery-top", {
         loop: true,
@@ -238,11 +242,11 @@ $(document).ready(function(){
         console.log("replay was pushed");
         game.reset();
     });
-
-    //to pull in the concerts js file (bands in town info)
-    //var concerts = require("./concerts");
-
-   // var movies = require("./movies");
+    
+   // to get the movies info (OMDB info) from the api file
+//    $.get("/api/movies", function(data){
+//         //use the data to render stuff to the page
+//     })
 
 
 
