@@ -1,15 +1,9 @@
 $(document).ready(function(){
-    
-
     $(".parallax").parallax();
-
     //for navbar on small screens
     $(".sidenav").sidenav();
-
     //form select
     $("select").formSelect();
-      
-
     // swiper js initialization
     var galleryTop = new Swiper(".gallery-top", {
         loop: true,
@@ -35,8 +29,7 @@ $(document).ready(function(){
         },
     });
 
-
-    //Trivia Game play section
+    //Trivia Game play section =========================================================================================
     //hide Triva Timer on page load
     $("#timerArea").hide();
     // questions and answers object
@@ -243,18 +236,28 @@ $(document).ready(function(){
         game.reset();
     });
     
-   // to get the movies info (OMDB info) from the api file
-//    $.get("/api/movies", function(data){
-//         //use the data to render stuff to the page
-//     })
-
-
-
-
-
-
-
-
+   // to get the movies value from DOM and send to the API route
+   $("#movieSelect").on("change", function(event){
+        event.preventDefault();
+        // console.log("this is the select on change function called");
+        //assign value from selected item
+        var movieTitle = $(this).val();
+        //put the movie title in an object to send to the API file
+        var movieObj = {
+            movie: movieTitle
+        };
+        console.log("this is the movie selected " + JSON.stringify(movieObj, null, 2));
+        //send the value to the API route
+        $.post("/", movieObj, function() {
+            console.log("movie selected")
+        }).then(function (data) {
+            // console.log("movie data object", data);
+            var movie = data;
+            console.log(movie.title, movie.plot, movie.runtime, movie.poster, movie.ratingSrc, movie.ratingVal, movie.awards);
+            //now how to display the result in handelbars//try doing a modal
+            // location.reload(); // won't this clear the page though because it will reset the form
+        })
+    });
 
 
 

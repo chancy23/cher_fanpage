@@ -147,10 +147,20 @@
             <div class="row">
                 <div class="col s12 m6" id="moviePosterDisplay">
                     {{!-- display the poster from tehe API --}}
+                    <img src="{{movie.poster}}" alt="movie poster">
                 </div>
 
                 <div class="col s12 m6" id="movieDetails">
                     {{!-- display the title, plot, year of release from the API --}}
+                    <h5>{{movie.title}}</h5>
+                    <p>{{movie.plot}}</p>
+                    <p>
+                        <ul>
+                            <li>{{movie.runtime}}</li>
+                            <li>{{movie.ratingSrc}}: {{movie.ratingVal}}</li>
+                            <li>{{movie.awards}}</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
            

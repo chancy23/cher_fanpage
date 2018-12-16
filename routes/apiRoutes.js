@@ -52,11 +52,12 @@ module.exports = function (app) {
     });
 
     //get request for OMDB
-    app.get("/", function(req, res) {
+    app.post("/", function(req, res) {
         //use the omdb key to pull in the movies cher has been in, and display on her page along with a movie poster
         var moviesKey = keys.omdb.id;
-
-        // var movie = ; //input from the front end of movie to search for
+        //input from the front end of movie to search for
+        var movie = req.body.movie; 
+        console.log("this is the movie passed from the front end " + JSON.stringify(movie, null, 2));
 
         var moviesRequestURL = "http://www.omdbapi.com/?";
 
@@ -71,24 +72,31 @@ module.exports = function (app) {
             // console.log(response.data);
             var data = response.data;
 
-            //the .map loops over the data and gives you each data obj one at a time then we return each concertDataObj. 
-            var formattedMovieData = data.map(function (data) {
-               
+            //assign the data reponse to the values I want to display
+            //the .map loops over the data and gives you each data obj one at a time then we return each concertDataObj.
+            // var movieData = data.map(function (data) {
+                var movieTitle = data.Title;
+                var moviePlot = data.Plot;
+                var movieAwards = data.Awards;
+                var moviePoster = data.Poster;
+                var movieRatingSrc = data.Ratings[1].Source;
+                var movieRatingVal = data.Ratings[1].Value;
+                var movieRuntime = data.Runtime;
 
-                //put the above values into an object, then return the object so the .map can push it to the array for the var formattedConcertData
-                var movieDataObj = {
-                    
+                //put values into an object
+                var movieData = {
+                    title: movieTitle,
+                    plot: moviePlot,
+                    awards: movieAwards,
+                    poster: moviePoster,
+                    ratingSrc: movieRatingSrc,
+                    ratingVal: movieRatingVal,
+                    runtime: movieRuntime
                 };
-                return movieDataObj;
-            });
-
-            //results:
-            //show the movie posters in the dom
-            //when user clicks the poster its replaced by a summary of the movie, yr released
-            //we can then take that formatted data that is in the array and use that to render into handlebars (need to send the array as a value of the obj)
-            res.render("index", {
-                movieDataObj: formattedMovieData
-            }); 
+               
+            console.log("movie data obj " + JSON.stringify(movieData, null, 2));
+            //results to send to front end JS
+            res.json(movieData) 
         })
         .catch(function (error) {
             console.log(error);
