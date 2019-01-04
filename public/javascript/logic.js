@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    // $('.modal').modal();
     $(".parallax").parallax();
     //for navbar on small screens
     $(".sidenav").sidenav();
@@ -254,7 +255,7 @@ $(document).ready(function(){
             // console.log("movie data object", data);
             var movie = data;
             console.log(movie.title, movie.plot, movie.runtime, movie.poster, movie.ratingSrc, movie.ratingVal, movie.awards);
-            //now how to display the result in handelbars//try doing a modal
+            //now how to display the result in handelbars
             // location.reload(); // won't this clear the page though because it will reset the form
         })
     });
