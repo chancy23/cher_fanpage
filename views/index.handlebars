@@ -52,12 +52,17 @@
     <div class="section white" id="trivia">
         <div class="row container">
             <h2 class="header" id="triviaHeader">Trivia</h2>
-            <p class="grey-text text-darken-3 lighten-3" id="triviaInstructions">Test your Cher knowledge in this timed trivia challenge!</p>
-            <div id=timerArea>You have <span id="timer">15</span> seconds left</div>
-            <div id="questionDisplay">
-                <button id="start">Start Trivia</button>
+            <div class="col s12 m6">
+                <p class="grey-text text-darken-3 lighten-3" id="triviaInstructions">Test your Cher knowledge in this timed trivia challenge. When you answer a question correclty you will be rewarded with a surprise!</p>
+                <a class="waves-effect waves-light btn" id="start">Start Trivia</a>
+                 <div id="timerArea">
+                    You have <span id="timer">15</span> seconds left
+                </div>
+                <div id="questionDisplay"></div>
             </div>
-            
+            <div class="col s12 m6">
+                <div id="gifDisplay"></div>
+            </div>
         </div>
     </div>
 

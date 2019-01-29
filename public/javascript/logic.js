@@ -106,22 +106,24 @@ $(document).ready(function(){
 
         showQuestion: function() {
             timer = setInterval(game.countdown, 1000);
-            $("#questionDisplay").html("<h3>" + questions[game.currentQuestion].question + "</h3>");
+            $("#questionDisplay").html("<h4>" + questions[game.currentQuestion].question + "</h4>");
                 //create a button var for each answer
             for (var i = 0; i < questions[game.currentQuestion].allAnswers.length; i++) {
-                $("#questionDisplay").append("<button class='answerButton' id='button-" + i + 
+                $("#questionDisplay").append("<a class='waves-effect waves-light btn-small answerButton' id='button-" + i + 
                 "' data-name='" + questions[game.currentQuestion].allAnswers[i] + "'>" + 
-                questions[game.currentQuestion].allAnswers[i] + "</button>");
+                questions[game.currentQuestion].allAnswers[i] + "</a>");
             };
         },
 
         nextQuestion: function() { 
             //reset timer to 15 seconds
             game.counter = 15;
-            //dispaly the timer in the dom
+            //display the timer in the dom
             $("#timer").text(game.counter);
             //get the next question (current question +1)
             game.currentQuestion++;
+            //empty the gif area
+            $("#gifDisplay").empty();
             //call the show question method with the new current question number
             game.showQuestion();
         },
@@ -131,13 +133,27 @@ $(document).ready(function(){
             clearInterval(timer);
             //hide the timer Area
             $("#timerArea").hide();
+            //empty the gif display
+            $("#gifDisplay").empty();
+            //add a final gif to show during the results display based on the number correct
+            $resultsGif = $("<img>").addClass("gif");
+            if (game.numCorrect > 3) {
+                $resultsGif.attr("src", "/images/gifs/applauseGIF.gif");
+                $("#questionDisplay").html("<h4>You're a true Cher fan!</h4>");
+            } else if (game.numCorrect <= 1) {
+                $resultsGif.attr("src", "/images/gifs/sadfaceGIF.gif");
+                $("#questionDisplay").html("<h4>Hmm, maybe you should try again.</h4>");
+            } else {
+                $resultsGif.attr("src", "/images/gifs/nottooshabbyGIF.gif");
+                $("#questionDisplay").html("<h4>Not too shabby!</h4>");
+            }
+            $("#gifDisplay").append($resultsGif);
             //then display the current scores
-            $("#questionDisplay").html("<h4>All Done!</h4>");
             $("#questionDisplay").append("<h5>Correct: " + game.numCorrect + "</h5>");
             $("#questionDisplay").append("<h5>Wrong: " + game.numWrong + "</h5>");
-            $("#questionDisplay").append("<h5>Unanswered " + game.numBlank + "</h5>");
+            $("#questionDisplay").append("<h5>Unanswered: " + game.numBlank + "</h5>");
             //add a reset button to the div to replay the game (call the reset method)
-            $("#questionDisplay").append("<button id='reset'>Replay</button>");
+            $("#questionDisplay").append("<a class='waves-effect waves-light btn' id='reset'>Replay</a>");
             
         },
 
@@ -163,7 +179,7 @@ $(document).ready(function(){
             $("#questionDisplay").html("<h5>That's correct!</h5><br>");
             $gifDiv = $("<img>").addClass("gif");
             $gifDiv.attr("src", questions[game.currentQuestion].image);
-            $("#questionDisplay").append($gifDiv);
+            $("#gifDisplay").append($gifDiv);
             //if there are no more questions left then call the results method after 3 seconds
             if (game.currentQuestion === questions.length - 1) {
                 console.log("no more questions");
@@ -182,7 +198,7 @@ $(document).ready(function(){
             //display they got it wrong in the dom
             $("#questionDisplay").html("<h5>Oops, that's wrong!</h5><br>");
             //show the correct answer
-            $("#questionDisplay").append("The correct answer is " + questions[game.currentQuestion].correctAnswer);
+            $("#questionDisplay").append("The correct answer is '" + questions[game.currentQuestion].correctAnswer + "'.");
             //add to the counter
             game.numWrong++;
             //if there are no more questions left then call the results method after 3 seconds
@@ -205,6 +221,8 @@ $(document).ready(function(){
             game.numBlank = 0;
             //load the first question
             game.showQuestion();
+            //empty the gif display
+            $("#gifDisplay").empty();
             //show the timer Area
             $("#timerArea").show();
         }
@@ -215,7 +233,7 @@ $(document).ready(function(){
     //on click of start
     $("#start").on("click", function() {
         //hide start button and the other sections of that container
-        $("#start, #triviaHeader, #triviaInstructions").hide();
+        $("#start, #triviaInstructions").hide();
         //show timer Area
         $("#timerArea").show();
         //call the show question function
