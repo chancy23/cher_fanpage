@@ -71,6 +71,7 @@ module.exports = function (app) {
         .then(function (response) {
             // console.log(response.data);
             var data = response.data;
+            console.log('data var', data);
 
             //assign the data reponse to the values I want to display
             //the .map loops over the data and gives you each data obj one at a time then we return each concertDataObj.
@@ -79,9 +80,16 @@ module.exports = function (app) {
                 var moviePlot = data.Plot;
                 var movieAwards = data.Awards;
                 var moviePoster = data.Poster;
-                var movieRatingSrc = data.Ratings[1].Source;
-                var movieRatingVal = data.Ratings[1].Value;
+                var movieRated = data.Rated;
+                var movieRatingSrc = data.Ratings[0].Source;
+                var movieRatingVal = data.Ratings[0].Value;
                 var movieRuntime = data.Runtime;
+                var movieReleased = data.Released;
+
+                // var movieRatingSrc = data.Ratings.map(rating => rating.Source);
+                // var movieRatingVal = data.Ratings.map(rating => rating.Value)
+               
+                // console.log("movie source array", movieRatingSrc);
 
                 //put values into an object
                 var movieData = {
@@ -89,9 +97,11 @@ module.exports = function (app) {
                     plot: moviePlot,
                     awards: movieAwards,
                     poster: moviePoster,
+                    rated: movieRated,
                     ratingSrc: movieRatingSrc,
                     ratingVal: movieRatingVal,
-                    runtime: movieRuntime
+                    runtime: movieRuntime,
+                    released: movieReleased
                 };
                
             console.log("movie data obj " + JSON.stringify(movieData, null, 2));

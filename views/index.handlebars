@@ -48,7 +48,38 @@
         <div class="parallax"><img src="/images/cher_inLights_bgi.png"></div>
     </div>
 
-    <!-- Trivia section --> 
+    <!-- images gallery or swiper -->
+    <div class="section white" id="gallery">
+        <div class="row container">
+            <h2 class="header">Gallery</h2>
+            
+        <!-- Slider main container -->
+            <div class="swiper-container gallery-top">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide" style="background-image: url(/images/cher1.jpg)"></div>
+                    <div class="swiper-slide" style="background-image: url(/images/cher2.jpg)"></div>
+                    <div class="swiper-slide" style="background-image: url(/images/cherMammaMia.png)"></div>
+                    <div class="swiper-slide" style="background-image: url(/images/cher3.jpg)"></div>
+                    <div class="swiper-slide" style="background-image: url(/images/cheroutfit.jpg)"></div>
+                    <div class="swiper-slide" style="background-image: url(/images/cher1980s.jpg)"></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="/images/cher_inLights_bgi.png"></div>
+    </div>
+
+     <!-- Trivia section --> 
     <div class="section white" id="trivia">
         <div class="row container">
             <h2 class="header" id="triviaHeader">Trivia</h2>
@@ -62,37 +93,6 @@
             </div>
             <div class="col s12 m6">
                 <div id="gifDisplay"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="parallax-container">
-        <div class="parallax"><img src="/images/cher_inLights_bgi.png"></div>
-    </div>
-
-    <!-- images gallery or swiper -->
-    <div class="section white" id="gallery">
-        <div class="row container">
-            <h2 class="header">Gallery</h2>
-            
-        <!-- Slider main container -->
-            <div class="swiper-container gallery-top">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide" style="background-image: url(/images/cher1.jpg)"></div>
-                    <div class="swiper-slide"style="background-image: url(/images/cher2.jpg)"></div>
-                    <div class="swiper-slide"style="background-image: url(/images/cherMammaMia.png)"></div>
-                    <div class="swiper-slide"style="background-image: url(/images/cher3.jpg)"></div>
-                    <div class="swiper-slide"style="background-image: url(/images/cheroutfit.jpg)"></div>
-                    <div class="swiper-slide"style="background-image: url(/images/cher1980s.jpg)"></div>
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-            
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
             </div>
         </div>
     </div>
@@ -127,15 +127,14 @@
         <div class="row container">
             <h2 class="header">Movies</h2>
             <div class="row">
-                <div class="input-field col s5">
+                <div class="input-field col s12 m5">
                     <select id="movieSelect">
                         <option value="" disabled selected>Choose a Movie to See its Details</option>
                         <option value="burlesque">Burlesque</option>
                         <option value="chastity">Chastity</option>
-                        <option value="come back to the five and dime">Come Back to the Five and Dime</option>
                         <option value="faithful">Faithful</option>
                         <option value="good times">Good Times</option>
-                        <option value="mamma mia 2">Mamma Mia 2</option>
+                        <option value="mamma mia! here we go again">Mamma Mia! Here We Go Again</option>
                         <option value="mask">Mask</option>
                         <option value="mermaids">Mermaids</option>
                         <option value="moonstruck">Moonstruck</option>
@@ -152,8 +151,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 m6" id="moviePosterDisplay"></div>
-                <div class="col s12 m6" id="movieDetails"></div>
+                <div class="col s12 m5" id="moviePosterDisplay"></div>
+                <div class="col s12 m7" id="movieDetails"></div>
             </div>
            
         </div>

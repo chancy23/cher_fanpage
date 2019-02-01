@@ -2,11 +2,17 @@ nav {
     background-color: rgb(29, 28, 28);
 }
 
+/* gallery section */
 .swiper-container {
-    width: 800px;
+    width: 80%;
     height: 400px;
 }
 
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+/* concert section */
 .concertBody {
     margin-top: 0;
 }
@@ -15,7 +21,33 @@ nav {
     margin-bottom: 1px;
 }
 
+/* trivia section */
+.btn,
+.btn-small {
+    background-color: blue;
+}
 .btn-small {
     margin-right: 3%;
     margin-bottom: 3%;
+}
+
+.gif {
+    width: 100%;
+    height: auto;
+}
+
+#reset {
+    margin-top: 5%;
+}
+
+#questionDisplay {
+    margin-bottom: 5%;
+}
+
+/* Adjust slider area for better readablity on small screen */
+@media only screen and (max-width: 640px) {
+    .swiper-container {
+        width: 100%;
+        height: 300px;
+    }
 }

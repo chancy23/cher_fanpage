@@ -31,7 +31,7 @@ $(document).ready(function(){
     });
 
     //Trivia Game play section =========================================================================================
-    //hide Triva Timer on page load
+    //hide Trivia Timer on page load
     $("#timerArea").hide();
     // questions and answers object
     var questions = [
@@ -196,7 +196,7 @@ $(document).ready(function(){
             //stop the countdown
             clearInterval(timer);
             //display they got it wrong in the dom
-            $("#questionDisplay").html("<h5>Oops, that's wrong!</h5><br>");
+            $("#questionDisplay").html("<h5>Oops, that's wrong. No GIF for you!</h5>");
             //show the correct answer
             $("#questionDisplay").append("The correct answer is '" + questions[game.currentQuestion].correctAnswer + "'.");
             //add to the counter
@@ -273,23 +273,43 @@ $(document).ready(function(){
         $.post("/", movieObj, function() {
             console.log("movie selected")
         }).then(function(data) {
-            // console.log("movie data object", data);
+            console.log("movie data object", data);
             var movie = data;
             // console.log(movie.title, movie.plot, movie.runtime, movie.poster, movie.ratingSrc, movie.ratingVal, movie.awards);
+
+              //****** need to loop through each array and match up to values to get all ratings...not working right now********
+            // for (var i = 0; i < movie.ratingSrc.length; i++) {
+            //     var $movieRating = $("<li>");
+            //     var $movieRatingSrc = movie.ratingSrc[i];
+            //     console.log('movie rating source in loop', $movieRatingSrc);
+            //     $movieRating.text($movieRatingSrc + ": ");
+            //     console.log("movie rating and src", $movieRating);
+            // };
+
+            // for (var j = 0; j < movie.ratingVal.length; j++) {
+            //     var $movieRatingVal = movie.ratingVal[j];
+            //     console.log('movie rating value in loop', $movieRatingVal);
+            //     // $movieRating.append($movieRatingVal);
+            // };
+
             //use jquery to create the DOM content each time the movie is picked
-            var $posterImg = $("<img>").attr("src", movie.poster);
+            var $posterImg = $("<img>").attr("src", movie.poster).css("width", "100%");
             $("#moviePosterDisplay").append($posterImg);
             var $movieTitle = $("<h5>").text(movie.title);
             var $moviePlot = $("<p>").text(movie.plot);
             var $list = $("<ul>");
+            var $movieRated = $("<li>").text("Rated: " + movie.rated);
             var $movieTime = $("<li>").text("Runtime: " + movie.runtime);
-            var $movieRating = $("<li>").text(movie.ratingSrc + ": " + movie.ratingVal);
+            var $movieRating = $("<li>").text(movie.ratingSrc + " Rating: " + movie.ratingVal);
             var $movieAwards = $("<li>").text("Awards: " + movie.awards);
+            var $movieReleased = $("<li>").text("Released: " + movie.released);
 
             $list.append(
+                $movieRated,
                 $movieTime, 
                 $movieRating, 
-                $movieAwards
+                $movieAwards,
+                $movieReleased
             );
 
             $("#movieDetails").append(
