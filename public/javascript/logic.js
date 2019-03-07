@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    // $('.modal').modal();
+    $('.modal').modal();
     $(".parallax").parallax();
     //for navbar on small screens
     $(".sidenav").sidenav();

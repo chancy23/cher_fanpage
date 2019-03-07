@@ -4,7 +4,7 @@
 
     </div>
     <!-- Bio blurb section -->
-    <div class="section white" id="bio">
+    <div class="section" id="bio">
         <div class="row container">
             <h2 class="header">Cher Bio</h2>
             <p class="grey-text text-darken-3 lighten-3">Cher was born on May 20, 1946 as Cherilyn Sarkisian, in El Centro, California. 
@@ -12,7 +12,7 @@
                 was an occasional model and actress. Cher's parents divorced when she was 10 months old. Holt later remarried and divorced 
                 a few times. Money was often hard to come by, and Holt and her daughters moved throughout the country.</p>
     
-            <p>Cher was fascinated by stars, but had a hard time finding dark hard actresses to emulate. Her role model was Audrey Hepburn, 
+            <p>Cher was fascinated by stars, but had a hard time finding dark haired actresses to emulate. Her role model was Audrey Hepburn, 
                 and she began to take on the unconventional outfits and behavior of Hepburn's charater in <em>Breakfast at Tiffany's</em>. 
                 She had wanted to be famous since childhood but felt unattractive and untalented, later commenting, 
                 "I couldn't think of anything that I could do... I didn't think I'd be a singer or dancer. I just thought, well, 
@@ -47,11 +47,11 @@
     </div>
 
     <div class="parallax-container">
-        <div class="parallax"><img src="/images/cher_inLights_bgi.png"></div>
+        <div class="parallax"><img src="/images/cher_vegas_2017_2.jpg"></div>
     </div>
 
     <!-- images gallery or swiper -->
-    <div class="section white" id="gallery">
+    <div class="section" id="gallery">
         <div class="row container">
             <h2 class="header">Gallery</h2>
             
@@ -60,6 +60,7 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
+                    <div class="swiper-slide" style="background-image: url(/images/cher_vegas_2017.jpg)"></div>
                     <div class="swiper-slide" style="background-image: url(/images/cher1.jpg)"></div>
                     <div class="swiper-slide" style="background-image: url(/images/cher2.jpg)"></div>
                     <div class="swiper-slide" style="background-image: url(/images/cherMammaMia.png)"></div>
@@ -78,15 +79,15 @@
     </div>
 
     <div class="parallax-container">
-        <div class="parallax"><img src="/images/cher_inLights_bgi.png"></div>
+        <div class="parallax"><img src="/images/cher-machado-cicala-1100.jpg"></div>
     </div>
 
      <!-- Trivia section --> 
-    <div class="section white" id="trivia">
+    <div class="section" id="trivia">
         <div class="row container">
             <h2 class="header" id="triviaHeader">Trivia</h2>
             <div class="col s12 m6">
-                <p class="grey-text text-darken-3 lighten-3" id="triviaInstructions">Test your Cher knowledge in this timed trivia challenge. When you answer a question correclty you will be rewarded with a surprise!</p>
+                <p class="grey-text text-darken-3 lighten-3" id="triviaInstructions">Test your Cher knowledge in this timed trivia challenge. When you answer a question correctly you will be rewarded with a surprise!</p>
                 <a class="waves-effect waves-light btn" id="start">Start Trivia</a>
                  <div id="timerArea">
                     You have <span id="timer">15</span> seconds left
@@ -100,11 +101,11 @@
     </div>
    
     <div class="parallax-container">
-        <div class="parallax"><img src="/images/cher_inLights_bgi.png"></div>
+        <div class="parallax"><img src="/images/cher_singing_2.jpg"></div>
     </div>
 
     <!-- concert info from Bands in Town API -->
-    <div class="section white" id="concerts">
+    <div class="section" id="concerts">
         <div class="row container">
             <h2 class="header">Upcoming Concerts</h2>
             <div class="row">
@@ -112,7 +113,7 @@
                 {{#each concertDataObj}}
                 <div class="col s12 m6">
                     <h5 class="concertHeader">{{this.venue}}</h5>
-                    <p class="concertBody">{{this.city}}, {{this.state}}<br>
+                    <p class="concertBody">{{this.city}} {{this.state}}<br>
                     {{this.date}} @ {{this.time}}</p>
                 </div>
                 {{/each}}  
@@ -121,17 +122,18 @@
     </div>
     
     <div class="parallax-container">
-        <div class="parallax"><img src="/images/cher_inLights_bgi.png"></div>
+        <div class="parallax"><img src="/images/cher_singing.jpg"></div>
     </div>
 
     <!-- search the OMBD for her movies and display info with a poster -->
-    <div class="section white" id="movies">
+    <div class="section" id="movies">
         <div class="row container">
             <h2 class="header">Movies</h2>
+            <p>Select a movie to see the poster and it's details.</p>
             <div class="row">
                 <div class="input-field col s12 m5">
                     <select id="movieSelect">
-                        <option value="" disabled selected>Choose a Movie to See its Details</option>
+                        <option value="" disabled selected>Select...</option>
                         <option value="burlesque">Burlesque</option>
                         <option value="chastity">Chastity</option>
                         <option value="faithful">Faithful</option>

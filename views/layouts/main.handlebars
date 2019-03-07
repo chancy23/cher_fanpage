@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cher Fan Page</title>
+    <link rel="shortcut icon" type="image/png" href="/images/cher_image_icon.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- swiper cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
@@ -19,6 +21,7 @@
     <!-- local js file -->
     <script src="/javascript/logic.js"></script>
 </head>
+
 <body>
     <!-- nav bar header -->
     <div class="navbar-fixed">
@@ -39,14 +42,49 @@
 
     <!-- code for the side nav to work -->
     <ul class="sidenav" id="sideNav">
-        <li><a href="#bio">Bio</a></li>
-        <li><a href="#trivia">Trivia</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#concerts">Concerts</a></li>
-        <li><a href="#movies">Movies</a></li>
+        <li><a class="sidenav-close" href="#bio">Bio</a></li>
+        <li><a class="sidenav-close" href="#trivia">Trivia</a></li>
+        <li><a class="sidenav-close" href="#gallery">Gallery</a></li>
+        <li><a class="sidenav-close" href="#concerts">Concerts</a></li>
+        <li><a class="sidenav-close" href="#movies">Movies</a></li>
+        <li><a class="sidenav-close" href="#!">Exit</a></li>
     </ul>
-    
+
     {{{body}}}
+
+    <!-- Disclaimer Modal-->
+    <div id="disclaimer" class="modal">
+        <div class="modal-content">
+            <h4>Disclaimer</h4>
+            <p>This page is not associated in anyway with Cher, it is just a fan page dedicated to a fabulous artist. I hope you enjoy!</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12 valign-wrapper">
+                    <p style="margin-top:15%">"Until you're ready to look foolish, you'll never have the possibility of being great." -Cher</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5>Links</h5>
+                    <ul>
+                        <li><a href="https://cher.com"target="_blank">Cher's Official Website</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Cher"target="_blank">Cher on Wikipedia</a></li>
+                        <li><a class="modal-trigger" href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <p class="center" style="color:#7a2f96">© 2019 Built by Chancy Leath</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

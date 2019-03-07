@@ -1,10 +1,31 @@
-nav {
-    background-color: rgb(29, 28, 28);
+nav,
+.page-footer {
+    background-color: #000;
+    /* color: #fff; */
+    color:#7a2f96;
 }
 
+.section {
+    background-color: rgb(235, 235, 235);
+}
+
+ul li a {
+    color: #46b1f8;
+}
+
+a {
+    color: #46b1f8;
+}
+
+.parallax-container {
+    height: 600px;
+  }
+
+/* shiny text and banner styling */
 #banner {
-    background-color: black;
-    height: 500px;
+    background-color: #000;
+    /* height: 500px; */
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,11 +34,10 @@ nav {
 #shinyText {
     position: relative;
     text-transform: uppercase;
-    /* adjust on small screens to be smaller */
     font-size: 14em;
     letter-spacing: 4px;
     overflow: hidden;
-    background: linear-gradient(90deg, #000, blue, #000);
+    background: linear-gradient(90deg, #000, #7a2f96, #46b1f8, #7a2f96, #000);
     background-repeat: no-repeat;
     background-size: 80%;
     animation: animate 3s linear infinite;
@@ -58,11 +78,17 @@ nav {
 /* trivia section */
 .btn,
 .btn-small {
-    background-color: blue;
+    background-color: #7a2f96;
 }
+
 .btn-small {
     margin-right: 3%;
     margin-bottom: 3%;
+}
+
+.btn:hover,
+.btn-small:hover {
+    background-color: #b153d3; 
 }
 
 .gif {
@@ -78,10 +104,30 @@ nav {
     margin-bottom: 5%;
 }
 
-/* Adjust slider area for better readablity on small screen */
+/* movie form */
+.dropdown-content li>span {
+    color: #7a2f96;
+}
+
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid #46b1f8;
+}
+
+@media only screen and (max-width: 1024px) {
+    #banner {
+        height: 50vh;
+    } 
+}
+
+@media only screen and (max-width: 823px) {
+    #shinyText {
+        font-size: 9em;
+    }
+}
+
 @media only screen and (max-width: 640px) {
     .swiper-container {
         width: 100%;
         height: 300px;
-    }
+    } 
 }
