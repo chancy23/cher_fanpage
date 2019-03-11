@@ -6,7 +6,7 @@ This is a personal pet project showcasing the many talents of Cher. It is an uno
 Deployed at: https://cher-fan-page032019.herokuapp.com/
 
 ##Video Demo
-[Video Demo of full site](https://drive.google.com/file/d/1F7IEcx23sZ4-M8eyV1-Fpgc_OOCorezH/view?usp=sharing)
+[Video Demo of full site](https://drive.google.com/file/d/1Mk6-GXSGwgiJ84I_z5-zcAoDGGUKHO7e/view?usp=sharing)
 
 ##Technology Used
 * HTML5
