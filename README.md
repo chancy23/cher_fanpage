@@ -3,7 +3,7 @@
 ##Overview
 This is a personal pet project showcasing the many talents of Cher. It is an unofficial fan page that I've used to encapsulate many of the technologies I've learned over the last year. Users can read a short bio, look at a photo gallery, take a trivia challenge, view upcoming concerts, and look up the movies Cher has been in.
 
-Deployed at: https://cher-fanpage031219.herokuapp.com/
+Deployed at: https://cher-fan-page032019.herokuapp.com/
 
 ##Video Demo
 [Video Demo of full site](https://drive.google.com/file/d/1F7IEcx23sZ4-M8eyV1-Fpgc_OOCorezH/view?usp=sharing)
@@ -17,6 +17,7 @@ Deployed at: https://cher-fanpage031219.herokuapp.com/
 * Express
 * Node
 * MVC Architecture
+* Axios
 * OMDB and Bands in Town APIs
 * Deployed on Heroku
 
