@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/chancy23/cher_fanpage.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["cher", "fan page", "cher concerts", "cher movies"],
+  "author": "Chancy Leath",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chancy23/cher_fanpage/issues"
