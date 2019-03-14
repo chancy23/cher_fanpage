@@ -7,7 +7,6 @@ body {
 nav,
 .page-footer {
     background-color: #000;
-    /* color: #fff; */
     color:#7a2f96;
 }
 
@@ -30,7 +29,6 @@ a {
 /* shiny text and banner styling */
 #banner {
     background-color: #000;
-    /* height: 500px; */
     height: 75vh;
     display: flex;
     justify-content: center;

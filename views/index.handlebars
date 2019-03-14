@@ -3,10 +3,10 @@
             <p id="shinyText">Cher</p>
 
     </div>
-    <!-- Bio blurb section -->
+
     <div class="section" id="bio">
         <div class="row container">
-            <h2 class="header">Cher Bio</h2>
+            <h2 class="header">Bio</h2>
             <p class="grey-text text-darken-3 lighten-3">Cher was born on May 20, 1946 as Cherilyn Sarkisian, in El Centro, California. 
                 Her father, John Sarkisian, a truck driver fond of gambling and drinking, was rarely around. Cher's mother, Georgia Holt, 
                 was an occasional model and actress. Cher's parents divorced when she was 10 months old. Holt later remarried and divorced 
@@ -42,7 +42,7 @@
                 and is still acting, releasing music, and performing live.</p>
     
             <p>To read more about Cher visit her <a href="https://en.wikipedia.org/wiki/Cher"target="_blank">Wikipedia</a> page, 
-                or to find show informaton and tickets visit <a href="https://cher.com"target="_blank">Cher.com</a></p>
+                or to find show tickets visit <a href="https://cher.com"target="_blank">Cher.com</a></p>
         </div>
     </div>
 
@@ -50,16 +50,12 @@
         <div class="parallax"><img src="/images/cher_vegas_2017_2.jpg"></div>
     </div>
 
-    <!-- images gallery or swiper -->
     <div class="section" id="gallery">
         <div class="row container">
             <h2 class="header">Gallery</h2>
             
-        <!-- Slider main container -->
             <div class="swiper-container gallery-top">
-                <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
                     <div class="swiper-slide" style="background-image: url(/images/cher_vegas_2017.jpg)"></div>
                     <div class="swiper-slide" style="background-image: url(/images/cher1.jpg)"></div>
                     <div class="swiper-slide" style="background-image: url(/images/cher2.jpg)"></div>
@@ -68,10 +64,7 @@
                     <div class="swiper-slide" style="background-image: url(/images/cheroutfit.jpg)"></div>
                     <div class="swiper-slide" style="background-image: url(/images/cher1980s.jpg)"></div>
                 </div>
-                <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
-            
-                <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
@@ -104,12 +97,10 @@
         <div class="parallax"><img src="/images/cher_singing_2.jpg"></div>
     </div>
 
-    <!-- concert info from Bands in Town API -->
     <div class="section" id="concerts">
         <div class="row container">
             <h2 class="header">Upcoming Concerts</h2>
             <div class="row">
-                {{!-- limit to next 8, and then have option to expand to see all --}}
                 {{#each concertDataObj}}
                 <div class="col s12 m6">
                     <h5 class="concertHeader">{{this.venue}}</h5>
@@ -125,7 +116,6 @@
         <div class="parallax"><img src="/images/cher_singing.jpg"></div>
     </div>
 
-    <!-- search the OMBD for her movies and display info with a poster -->
     <div class="section" id="movies">
         <div class="row container">
             <h2 class="header">Movies</h2>
