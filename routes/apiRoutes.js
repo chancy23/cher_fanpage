@@ -60,7 +60,7 @@ module.exports = function (app) {
       .then(function (response) {
         // console.log(response.data);
         var data = response.data;
-        console.log('data var', data);
+        //console.log('data var', data);
 
         //assign the data reponse to the values I want to display
         //the .map loops over the data and gives you each data obj one at a time then we return each concertDataObj.

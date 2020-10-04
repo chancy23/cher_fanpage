@@ -77,7 +77,6 @@ $(document).ready(function () {
       game.counter--;
       $("#timer").text(game.counter);
       if (game.counter <= 0) {
-        //console.log("time up");
         game.timeUp();
       };
     },
@@ -85,12 +84,12 @@ $(document).ready(function () {
       // stop the timer, mark as a blank
       clearInterval(timer);
       game.numBlank++;
-      console.log("number blank " + game.numBlank);
+      
       $("#questionDisplay").html("<h5>Time's Up!</h5>");
       $("#questionDisplay").append("The correct answer is " + questions[game.currentQuestion].correctAnswer);
       
       if (game.currentQuestion === questions.length - 1) {
-        console.log("no more questions");
+       
         setTimeout(game.results, 3000);
       }
       else {
@@ -148,16 +147,15 @@ $(document).ready(function () {
       };
     },
     answeredCorrect: function () {
-      console.log("right");
       clearInterval(timer);
       game.numCorrect++;
+
       $("#questionDisplay").html("<h5>That's correct!</h5><br>");
       $gifDiv = $("<img>").addClass("gif");
       $gifDiv.attr("src", questions[game.currentQuestion].image);
       $("#gifDisplay").append($gifDiv);
       
       if (game.currentQuestion === questions.length - 1) {
-        console.log("no more questions");
         setTimeout(game.results, 3000);
       }
       else {
@@ -165,13 +163,12 @@ $(document).ready(function () {
       };
     },
     answeredWrong: function () {
-      console.log("wrong");
       clearInterval(timer);
       $("#questionDisplay").html("<h5>Oops, that's wrong. No GIF for you!</h5>");
       $("#questionDisplay").append("The correct answer is '" + questions[game.currentQuestion].correctAnswer + "'.");
       game.numWrong++;
+
       if (game.currentQuestion === questions.length - 1) {
-        console.log("no more questions");
         setTimeout(game.results, 3000);
       }
       else {
@@ -205,7 +202,6 @@ $(document).ready(function () {
 
   $("#questionDisplay").on("click", "#reset", function (event) {
     event.preventDefault();
-    console.log("replay was pushed");
     game.reset();
   });
 
@@ -220,14 +216,12 @@ $(document).ready(function () {
     var movieObj = {
       movie: movieTitle
     };
-    console.log("this is the movie selected " + JSON.stringify(movieObj, null, 2));
+    
     //send the value to the API route
     $.post("/", movieObj, function () {
-      console.log("movie selected")
-    }).then(function (data) {
-      console.log("movie data object", data);
+      }).then(function (data) {
+      
       var movie = data;
-      // console.log(movie.title, movie.plot, movie.runtime, movie.poster, movie.ratingSrc, movie.ratingVal, movie.awards);
 
       //use jquery to create the DOM content each time the movie is picked
       var $posterImg = $("<img>").attr("src", movie.poster).css("width", "100%");
