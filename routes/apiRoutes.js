@@ -47,7 +47,7 @@ module.exports = function (app) {
   app.post("/", function (req, res) {
     var moviesKey = keys.omdb.id;
     var movie = req.body.movie;
-    console.log("this is the movie passed from the front end " + JSON.stringify(movie, null, 2));
+    // console.log("this is the movie passed from the front end " + JSON.stringify(movie, null, 2));
 
     var moviesRequestURL = "http://www.omdbapi.com/?";
 
@@ -87,7 +87,7 @@ module.exports = function (app) {
           released: movieReleased
         };
 
-        console.log("movie data obj " + JSON.stringify(movieData, null, 2));
+        // console.log("movie data obj " + JSON.stringify(movieData, null, 2));
         //results to send to front end JS
         res.json(movieData)
       })

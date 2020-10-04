@@ -10,7 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/chancy23/cher_fanpage.git"
   },
-  "keywords": ["cher", "fan page", "cher concerts", "cher movies"],
+  "keywords": [
+    "cher",
+    "fan page",
+    "cher concerts",
+    "cher movies"
+  ],
   "author": "Chancy Leath",
   "license": "ISC",
   "bugs": {
@@ -18,13 +23,13 @@
   },
   "homepage": "https://github.com/chancy23/cher_fanpage#readme",
   "dependencies": {
-    "axios": "^0.18.0",
-    "dotenv": "^6.1.0",
-    "express": "^4.16.4",
-    "express-handlebars": "^3.0.0",
-    "moment": "^2.22.2",
-    "nodemon": "^1.18.10",
+    "axios": "^0.18.1",
+    "dotenv": "^6.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "moment": "^2.29.0",
+    "nodemon": "^1.19.4",
     "path": "^0.12.7",
-    "request": "^2.88.0"
+    "request": "^2.88.2"
   }
 }
