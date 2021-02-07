@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/chancy23/cher_fanpage#readme",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "dotenv": "^6.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "moment": "^2.29.0",
+    "moment": "^2.29.1",
     "nodemon": "^1.19.4",
     "path": "^0.12.7",
     "request": "^2.88.2"

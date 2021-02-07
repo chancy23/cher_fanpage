@@ -4,6 +4,7 @@ var axios = require("axios");
 var moment = require("moment");
 
 module.exports = function (app) {
+  //bands in town no longer works, must be a student (last for 3 months) or work on behalf of artist
   app.get("/", function (req, res) {
     var bandsKey = keys.bands.id;
     var concertsRequestURL = "https://rest.bandsintown.com/artists/cher/events?";
@@ -13,7 +14,7 @@ module.exports = function (app) {
       }
     })
       .then(function (response) {
-        // console.log(response.data);
+        console.log('bands in town', response.data);
         var data = response.data;
 
         //the .map loops over the data and gives you each data obj one at a time then we return each concertDataObj. 
